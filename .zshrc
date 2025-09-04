@@ -168,7 +168,10 @@ passls() {
     printf "%-30s | %-28s | %s\n" "$entry" "$user" "$pass_masked"
   done <<< "$entries"
 }
-clear_screen() { clear; zle reset-prompt }
-zle -N clear_screen
-bindkey '^I' clear_screen   # Ctrl+I (pero pisa Tab)
+# clear_screen() { clear; zle reset-prompt }
+# zle -N clear_screen
+# bindkey '^I' clear_screen   # Ctrl+I (pero pisa Tab)
+
+# Aceptar la sugerencia inline con Ctrl+Y
+bindkey '^Y' autosuggest-accept
 
